@@ -63,12 +63,23 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg) ;
+      transition: all;
+      transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035)
     }
 
   </style>
 
   <script>
+      function SetDate() {
+       const now = new Date;
+       const seconds = now.getSeconds();
+       const secondsinDegrees= ((seconds/60) * 360);
+       consolelog("{{seconds}}seconds and {{secondsinDegrees}}degress")
+      }
 
+      setInterval(SetDate, 500)
 
   </script>
 </body>
