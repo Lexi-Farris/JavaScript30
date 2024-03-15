@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,6 +81,21 @@
   </style>
 
   <script>
+  // Include Lightbox 
+import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  // may select multiple "galleries"
+  gallery: '#gallery--getting-started',
+
+  // Elements within gallery (slides)
+  children: 'a',
+
+  // setup PhotoSwipe Core dynamic import
+  pswpModule: () => import('/photoswipe/photoswipe.esm.js')
+});
+lightbox.init();
+  
     const secondHand = document.querySelector('.second-hand');
     const minuteHand = document.querySelector('.min-hand');
     const hourHand = document.querySelector('.hour-hand');
